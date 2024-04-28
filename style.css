@@ -1,0 +1,292 @@
+* {
+  font-family: "Russo One", sans-serif;
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #18181a;
+}
+
+p {
+  color: #fff;
+}
+
+.input-field {
+  width: 200px;
+  padding: 12px 20px;
+  margin: 10px 20px 0 0;
+  height: 60px;
+  box-sizing: border-box;
+  border: 2px solid #555;
+  border-radius: 10px;
+  outline: none;
+  text-align: center;
+  font-size: 20px;
+  transition: 0.3s;
+  background-color: #282828;
+  color: #fff;
+}
+.input-field:focus {
+  border-color: #7d8e95;
+}
+
+.button-57 {
+position: relative;
+overflow: hidden;
+border: 1px solid #fff;
+color: #fff;
+display: inline-block;
+font-size: 15px;
+line-height: 15px;
+padding: 18px 18px 17px;
+text-decoration: none;
+cursor: pointer;
+background: #282828;
+user-select: none;
+-webkit-user-select: none;
+touch-action: manipulation;
+border-radius: 10px;
+}
+
+.button-57 span:first-child {
+position: relative;
+transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+z-index: 10;
+}
+
+.button-57 span:last-child {
+color: #fff;
+display: block;
+position: absolute;
+bottom: 0;
+transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+z-index: 100;
+opacity: 0;
+top: 50%;
+left: 50%;
+transform: translateY(225%) translateX(-50%);
+height: 14px;
+line-height: 13px;
+}
+
+.button-57:after {
+content: "";
+position: absolute;
+bottom: -50%;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: #7d8e95;
+transform-origin: bottom center;
+transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+transform: skewY(9.3deg) scaleY(0);
+z-index: 50;
+}
+
+.button-57:hover:after {
+transform-origin: bottom center;
+transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+transform: translateX(-50%) translateY(-100%);
+opacity: 1;
+transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
+
+
+.div {
+text-align: center;
+}
+
+.photo {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  margin: auto;
+
+  background-color: #282828;
+  height: 250px;
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+
+.genres {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 100px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  background-color: #282828;
+  height: 250px;
+  width: 250px;
+  color: #fff;
+}
+#genres-title {
+  font-size: 25px;
+}
+.genreRowAll {
+  margin-top: 10px;
+}
+.genreRowAll, .trackRowAll, .albumRowAll {
+  width: 100%;
+}
+
+.top-tracks {
+  position: absolute;
+  top: 200px;
+  left: 100px;
+
+  background-color: #282828;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  min-height: 600px;
+  width: 500px;
+}
+.trackRowAll img {
+width: 90px; 
+height: 90px;
+margin-left: 15px;
+}
+.trackRowAll p {
+display: flex;
+align-items: center;
+margin-left: 20px;
+color: #fff;
+}
+.trackRowAll {
+display: flex;
+flex-direction: row;
+margin-bottom: 15px;
+}
+#tracks-title {
+  font-size: 23px;
+}
+
+.hide {
+  display: none;
+}
+
+.albums {
+  position: absolute;
+  top: 200px;
+  right: 100px;
+
+  background-color: #282828;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  min-height: 600px;
+  width: 500px;
+}
+.albums div p {
+  color: lightgray;
+}
+#albums-title {
+  font-size: 23px;
+}
+.albumRowAll:hover {
+  background-color: #666;
+  cursor: pointer;
+  color: #fff;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+.albumRowAll:hover * {
+  color: #fff;
+}
+
+.trackRowAll:hover {
+  background-color: #666;
+  cursor: pointer;
+  color: #fff;
+  transform: scale(1.05);
+  transition: all 0.3s ease-in-out;
+}
+.trackRowAll:hover * {
+  color: #fff;
+}
+
+.followers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 350px;
+  background-color: #282828;
+  width: 130px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+}
+.followers p {
+  margin: 5px;
+}
+#followers-text {
+  background-color: #444;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  height: 21px;
+}
+.followers.hide {
+  display: none;
+}
+
+.albumRowAll img {
+  width: 90px; 
+  height: 90px;
+  margin-left: 15px;
+  }
+.albumRowAll p {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  color: #fff;
+}
+.albumRowAll {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 15px;
+}
+
+#name-text {
+position: absolute;
+top: 270px;
+font-size: 30px;
+color: #fff;
+}
+
+#error-message {
+  position: absolute;
+  bottom: 370px;
+  color: red;
+}
+
+.photo-missing {
+  position: absolute;
+  top: 130px;
+  font-size: 30px;
+  background-color: #444;
+  border-radius: 10px;
+  padding: 10px;
+  color: red;
+}
+
+.missing-albums-error {
+  position: absolute;
+  right: 140px;
+  background-color: #444;
+  border-radius: 10px;
+  padding: 10px;
+  color: red;
+  font-size: 30px;
+}
+
+.albums a, .top-tracks a {
+  text-decoration: none;
+}

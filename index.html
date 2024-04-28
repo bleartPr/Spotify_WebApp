@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&family=Russo+One&display=swap" rel="stylesheet">
+
+    <title>my spotify follower count</title>
+</head>
+<body>
+    <div class="prompt-body">
+        <input placeholder="ARTIST NAME" class="input-field" type="text">
+        <button onclick="display_content()" class="button-57" role="button"><span class="text">Submit</span><span>Submit</span></button>
+    </div>
+
+    <a id="photo-clickable" href="">
+        <div class="photo div hide">
+                <img src="" alt="">
+        </div>
+    </a>
+
+    <div class="genres div hide">
+        <p id="genres-title">Artists Genres</p>
+        <div class="genre-row-1 genreRowAll">
+            <p id="genre1-text"></p>
+        </div>
+        <div class="genre-row-2 genreRowAll">
+            <p id="genre2-text"></p>
+        </div>
+        <div class="genre-row-3 genreRowAll">
+            <p id="genre3-text"></p>
+        </div>
+    </div>
+
+    <div class="top-tracks div hide">
+        <p id="tracks-title">Artist's Top 5 Trending Tracks</p>
+        <a id="tracks-clickable-1">
+            <div class="track-row-1 trackRowAll">
+                <img id="track1-photo" alt="Album Cover Photo">
+                <p id="track1-text"></p>
+            </div>
+        </a>
+        <a id="tracks-clickable-2">
+            <div class="track-row-2 trackRowAll">
+                <img id="track2-photo" alt="Album Cover Photo">
+                <p id="track2-text"></p>
+            </div>
+        </a>
+        <a id="tracks-clickable-3">
+            <div class="track-row-3 trackRowAll">
+                <img id="track3-photo" alt="Album Cover Photo">
+                <p id="track3-text"></p>
+            </div>
+        </a>
+        <a id="tracks-clickable-4">
+            <div class="track-row-4 trackRowAll">
+                <img id="track4-photo" alt="Album Cover Photo">
+                <p id="track4-text"></p>
+            </div>
+        </a>
+        <a id="tracks-clickable-5">
+            <div class="track-row-5 trackRowAll">
+                <img id="track5-photo" alt="Album Cover Photo">
+                <p id="track5-text"></p>
+            </div>
+        </a>
+    </div>    
+     
+
+    <div class="albums div hide">
+        <p id="albums-title">Artists Recent Albums</p>
+
+        <a id="album-clickable-1" href="">
+            <div class="album-row-1 albumRowAll">
+                <img id="album1-photo" alt="Album Cover">
+                <p id="album1-text"></p>
+            </div>
+        </a>
+        <a id="album-clickable-2" href="">
+            <div class="album-row-2 albumRowAll">
+                <img id="album2-photo" alt="Album Cover">
+                <p id="album2-text"></p>
+            </div>
+        </a>
+        <a id="album-clickable-3" href="">
+            <div class="album-row-3 albumRowAll">
+                <img id="album3-photo" alt="Album Cover">
+                <p id="album3-text"></p>
+            </div>
+        </a>
+        <a id="album-clickable-4" href="">
+            <div class="album-row-4 albumRowAll">
+                <img id="album4-photo" alt="Album Cover">
+                <p id="album4-text"></p>
+            </div>
+        </a>
+        <a id="album-clickable-5" href="">
+            <div class="album-row-5 albumRowAll">
+                <img id="album5-photo" alt="Album Cover">
+                <p id="album5-text"></p>
+            </div>
+        </a>      
+    </div>    
+
+    <div class="followers div hide">
+        <p>Followers</p>
+        <p id="followers-text"></p>
+    </div>
+    <p id="name-text"></p>
+    <p id="error-message"></p>
+    <p class="photo-missing hide">Artist Has No Photo!</p>
+    <p class="missing-albums-error hide">This Artist Has No Albums</p>
+
+    <script src="script.js"></script>
+</body>
+</html>
