@@ -1,9 +1,9 @@
 function display_content() {
-    fetch('/test_api_token')
+    fetch('https://spotify-webapp-backend.onrender.com/test_api_token')
         .then(() => {
             const user_search = document.querySelector(".input-field").value;
 
-            fetch(`/get_artist_search`, {
+            fetch(`https://spotify-webapp-backend.onrender.com/get_artist_search`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -20,7 +20,7 @@ function display_content() {
                         return;
                     }
 
-                    fetch('/get_artist_info')
+                    fetch('https://spotify-webapp-backend.onrender.com/get_artist_info')
                         .then(response => response.json())
                         .then(data => {
                             if (document.getElementById("error-message").innerHTML !== "") {
@@ -56,7 +56,7 @@ function display_content() {
 
                             document.getElementById("name-text").innerHTML = data.name;
 
-                            fetch('/get_artist_top_tracks')
+                            fetch('https://spotify-webapp-backend.onrender.com/get_artist_top_tracks')
                                 .then(response => response.json())
                                 .then(data => {
                                     const topTracks = data.tracks.sort((a, b) => b.popularity - a.popularity).slice(0, 5);
@@ -79,7 +79,7 @@ function display_content() {
                                     }
                                     document.querySelector(".top-tracks").classList.remove("hide");
                                 });
-                                fetch('/get_artist_album')
+                                fetch('https://spotify-webapp-backend.onrender.com/get_artist_album')
                                 .then(response => response.json())
                                 .then(data => {
                                     const topAlbums = data.items.sort((a, b) => new Date(b.release_date) - new Date(a.release_date)).slice(0, 5);
