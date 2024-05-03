@@ -23,6 +23,9 @@ function display_content() {
                     fetch('https://spotify-webapp-backend.onrender.com/get_artist_info')
                         .then(response => response.json())
                         .then(data => {
+                            document.getElementById("website-logo").classList.add("hide");
+                            document.getElementById("start-text").classList.add("hide");
+
                             if (document.getElementById("error-message").innerHTML !== "") {
                                 document.getElementById("error-message").innerHTML = "";
                             }
@@ -39,16 +42,23 @@ function display_content() {
                             }
 
                             const topGenres = data.genres.slice(0, 3);
+                            let genre_empty_boolean = true;
                             for (let i = 1; i <= 3; i++) {
                                 const genreRow = document.querySelector(`.genre-row-${i}`);
                                 if (topGenres[i - 1]) {
-                                    genreRow.innerHTML = topGenres[i - 1];
+                                    genreRow.innerHTML = topGenres[i - 1].toUpperCase();
                                     genreRow.classList.remove("hide");
+                                    genre_empty_boolean = false;
+                                    document.querySelector(".missing-genres-error").classList.add("hide");
                                 } else {
                                     genreRow.innerHTML = "";
                                     genreRow.classList.add("hide");
                                 }
                             }
+                            if (genre_empty_boolean) {
+                                document.querySelector(".missing-genres-error").classList.remove("hide");
+                            }
+
                             document.querySelector(".genres").classList.remove("hide");
 
                             document.querySelector("#followers-text").innerHTML = data.followers.total.toLocaleString();
@@ -113,6 +123,10 @@ function display_content() {
                                     document.querySelector(".albums").classList.remove("hide");
                                 })
                         });
+                })
+                .catch(error => {
+                    document.getElementById("error-message").innerHTML = "Sorry, This Artist Is Unavailable";
+                    return;
                 });
-        });
+            });
 }
