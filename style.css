@@ -7,7 +7,7 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #18181a;
+    background: linear-gradient(to top, #18182a, #18183a, #18194a);
 }
 
 p {
@@ -26,7 +26,7 @@ p {
   text-align: center;
   font-size: 20px;
   transition: 0.3s;
-  background-color: #282828;
+  background-color: #18182a;
   color: #fff;
 }
 .input-field:focus {
@@ -44,7 +44,7 @@ line-height: 15px;
 padding: 18px 18px 17px;
 text-decoration: none;
 cursor: pointer;
-background: #282828;
+background: #18182a;
 user-select: none;
 -webkit-user-select: none;
 touch-action: manipulation;
@@ -109,7 +109,7 @@ text-align: center;
   right: 0;
   margin: auto;
 
-  background-color: #282828;
+  background-color: #18192a;
   height: 250px;
   width: 250px;
   border-radius: 10px;
@@ -118,23 +118,30 @@ text-align: center;
 
 .genres {
   display: flex;
+  align-items: center;
   flex-direction: column;
   position: absolute;
   bottom: 100px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   border-radius: 10px;
-  background-color: #282828;
+  background-color: #18192a;
   height: 250px;
   width: 250px;
   color: #fff;
 }
 #genres-title {
   font-size: 25px;
+  margin-bottom: 12px;
 }
 .genreRowAll {
   margin-top: 10px;
+  min-width: 50px;
+  max-width: 250px;
+  background-color: #18283a;
+  border-radius: 10px;
+  padding: 10px;
 }
-.genreRowAll, .trackRowAll, .albumRowAll {
+.trackRowAll, .albumRowAll {
   width: 100%;
 }
 
@@ -143,7 +150,7 @@ text-align: center;
   top: 200px;
   left: 100px;
 
-  background-color: #282828;
+  background-color: #18192a;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   min-height: 600px;
@@ -178,7 +185,7 @@ margin-bottom: 15px;
   top: 200px;
   right: 100px;
 
-  background-color: #282828;
+  background-color: #18192a;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   min-height: 600px;
@@ -219,7 +226,7 @@ margin-bottom: 15px;
   align-items: center;
   position: absolute;
   top: 350px;
-  background-color: #282828;
+  background-color: #18192a;
   width: 130px;
   border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
@@ -228,7 +235,7 @@ margin-bottom: 15px;
   margin: 5px;
 }
 #followers-text {
-  background-color: #444;
+  background-color: #18283a;
   border-radius: 10px;
   padding: 0 10px 0 10px;
   height: 21px;
@@ -289,4 +296,29 @@ color: #fff;
 
 .albums a, .top-tracks a {
   text-decoration: none;
+}
+
+#start-text {
+  position: absolute;
+  top: 350px;
+  color: lightgray;
+}
+#website-logo {
+  position: absolute;
+  top: 60px;
+  height: 250px;
+  width: 250px;
+  background-color: transparent;
+  border-radius: 50%;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 1);
+}
+
+.missing-genres-error {
+  position: absolute;
+  font-size: 20px;
+  color: red;
+  background-color: #444;
+  border-radius: 10px;
+  padding: 10px;
+  bottom: 170px;
 }
