@@ -14,7 +14,7 @@
 <body>
     <div class="prompt-body">
         <input placeholder="ARTIST NAME" class="input-field" type="text">
-        <button onclick="display_content()" class="button-57" role="button"><span class="text">Submit</span><span>Submit</span></button>
+        <button onclick="display_content()" class="button-57" role="button"><span class="text">Submit</span><span>Search</span></button>
     </div>
 
     <a id="photo-clickable" href="">
@@ -110,10 +110,15 @@
         <p>Followers</p>
         <p id="followers-text"></p>
     </div>
+
+    <img id="website-logo" src="website_logo.jfif" alt="website logo">
+    <h1 id="start-text">WELCOME, SEARCH A SPOTIFY ARTIST!</h1>
+
     <p id="name-text"></p>
     <p id="error-message"></p>
     <p class="photo-missing hide">Artist Has No Photo!</p>
     <p class="missing-albums-error hide">This Artist Has No Albums</p>
+    <p class="missing-genres-error hide">NO GENRES</p>
 
     <script src="script.js"></script>
 </body>
