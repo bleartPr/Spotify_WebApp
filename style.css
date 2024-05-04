@@ -7,7 +7,8 @@ body{
   justify-content: center;
   align-items: center;
   height: 100vh;
-    background: linear-gradient(to top, #18182a, #18183a, #18194a);
+  background: linear-gradient(to top, #18182a, #18183a, #18194a);
+  overflow: hidden;
 }
 
 p {
@@ -15,40 +16,46 @@ p {
 }
 
 .input-field {
+  position: fixed;
   width: 200px;
-  padding: 12px 20px;
-  margin: 10px 20px 0 0;
   height: 60px;
+  padding: 12px 20px;
+  top: 417px;
+  left: 50%;
+  transform: translateX(-50%);
   box-sizing: border-box;
   border: 2px solid #555;
   border-radius: 10px;
   outline: none;
   text-align: center;
   font-size: 20px;
-  transition: 0.3s;
   background-color: #18182a;
   color: #fff;
 }
+
 .input-field:focus {
   border-color: #7d8e95;
 }
 
 .button-57 {
-position: relative;
-overflow: hidden;
-border: 1px solid #fff;
-color: #fff;
-display: inline-block;
-font-size: 15px;
-line-height: 15px;
-padding: 18px 18px 17px;
-text-decoration: none;
-cursor: pointer;
-background: #18182a;
-user-select: none;
--webkit-user-select: none;
-touch-action: manipulation;
-border-radius: 10px;
+  position: fixed;
+  overflow: hidden;
+  border: 1px solid #fff;
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  line-height: 15px;
+  padding: 18px 18px 17px;
+  text-decoration: none;
+  cursor: pointer;
+  background: #18182a;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  border-radius: 10px;
+  top: 485px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .button-57 span:first-child {
@@ -67,7 +74,7 @@ z-index: 100;
 opacity: 0;
 top: 50%;
 left: 50%;
-transform: translateY(225%) translateX(-50%);
+transform: translateY(225%) translateX(-80%);
 height: 14px;
 line-height: 13px;
 }
@@ -92,11 +99,10 @@ transform: skewY(9.3deg) scaleY(2);
 }
 
 .button-57:hover span:last-child {
-transform: translateX(-50%) translateY(-100%);
+transform: translateX(-50%) translateY(-50%);
 opacity: 1;
 transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
 }
-
 
 .div {
 text-align: center;
@@ -114,6 +120,7 @@ text-align: center;
   width: 250px;
   border-radius: 10px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
 }
 
 .genres {
@@ -121,13 +128,14 @@ text-align: center;
   align-items: center;
   flex-direction: column;
   position: absolute;
-  bottom: 100px;
+  top: 600px;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   background-color: #18192a;
   height: 250px;
   width: 250px;
   color: #fff;
+  transition: all 0.2s;
 }
 #genres-title {
   font-size: 25px;
@@ -155,6 +163,7 @@ text-align: center;
   border-radius: 10px;
   min-height: 600px;
   width: 500px;
+  transition: ease-in-out 0.3s;
 }
 .trackRowAll img {
 width: 90px; 
@@ -170,6 +179,7 @@ color: #fff;
 .trackRowAll {
 display: flex;
 flex-direction: row;
+align-items: center;
 margin-bottom: 15px;
 }
 #tracks-title {
@@ -190,58 +200,7 @@ margin-bottom: 15px;
   border-radius: 10px;
   min-height: 600px;
   width: 500px;
-}
-.albums div p {
-  color: lightgray;
-}
-#albums-title {
-  font-size: 23px;
-}
-.albumRowAll:hover {
-  background-color: #666;
-  cursor: pointer;
-  color: #fff;
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
-}
-.albumRowAll:hover * {
-  color: #fff;
-}
-
-.trackRowAll:hover {
-  background-color: #666;
-  cursor: pointer;
-  color: #fff;
-  transform: scale(1.05);
-  transition: all 0.3s ease-in-out;
-}
-.trackRowAll:hover * {
-  color: #fff;
-}
-
-.followers {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 350px;
-  background-color: #18192a;
-  width: 130px;
-  border-radius: 10px;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
-}
-.followers p {
-  margin: 5px;
-}
-#followers-text {
-  background-color: #18283a;
-  border-radius: 10px;
-  padding: 0 10px 0 10px;
-  height: 21px;
-}
-.followers.hide {
-  display: none;
+  transition: all 0.2s;
 }
 
 .albumRowAll img {
@@ -259,6 +218,61 @@ margin-bottom: 15px;
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
+  align-items: center;
+}
+
+.albums div p {
+  color: lightgray;
+}
+#albums-title {
+  font-size: 23px;
+}
+.albumRowAll:hover {
+  background-color: #666;
+  cursor: pointer;
+  color: #fff;
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+}
+.albumRowAll:hover * {
+  color: #fff;
+}
+
+.trackRowAll:hover {
+  background-color: #666;
+  cursor: pointer;
+  color: #fff;
+  transform: scale(1.05);
+  transition: ease-in-out 0.3s;
+}
+.trackRowAll:hover * {
+  color: #fff;
+}
+
+.followers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 340px;
+  background-color: #18192a;
+  width: 130px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.5);
+  transition: all 0.2s;
+}
+.followers p {
+  margin: 5px;
+}
+#followers-text {
+  background-color: #18283a;
+  border-radius: 10px;
+  padding: 0 10px 0 10px;
+  height: 21px;
+}
+.followers.hide {
+  display: none;
 }
 
 #name-text {
@@ -270,7 +284,7 @@ color: #fff;
 
 #error-message {
   position: absolute;
-  bottom: 370px;
+  top: 530px;
   color: red;
 }
 
@@ -286,7 +300,19 @@ color: #fff;
 
 .missing-albums-error {
   position: absolute;
+  top: 450px;
   right: 140px;
+  background-color: #444;
+  border-radius: 10px;
+  padding: 10px;
+  color: red;
+  font-size: 30px;
+}
+
+.missing-tracks-error {
+  position: absolute;
+  top: 450px;
+  left: 140px;
   background-color: #444;
   border-radius: 10px;
   padding: 10px;
@@ -300,7 +326,7 @@ color: #fff;
 
 #start-text {
   position: absolute;
-  top: 350px;
+  top: 320px;
   color: lightgray;
 }
 #website-logo {
@@ -320,5 +346,428 @@ color: #fff;
   background-color: #444;
   border-radius: 10px;
   padding: 10px;
-  bottom: 170px;
+  top: 690px;
+}
+
+/* support for minimised desktop screen */
+@media (max-width: 1550px) {
+  .photo {
+    height: 200px;
+    width: 200px;
+  }
+  .top-tracks {
+    border-radius: 10px;
+    min-height: 400px;
+    width: 350px;
+  }
+  .trackRowAll img {
+    width: 60px; 
+    height: 60px; 
+    margin-left: 10px; 
+  }
+  .trackRowAll p {
+    margin-left: 15px; 
+    font-size: 12px;
+  }
+  .trackRowAll {
+    margin-bottom: 10px; 
+  }
+  #tracks-title {
+    font-size: 14px; 
+  }
+  .albums {
+    border-radius: 10px;
+    min-height: 400px;
+    width: 350px;
+  }
+  .albumRowAll img {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+  }
+  .albumRowAll p {
+    margin-left: 15px;
+    color: #fff;
+    font-size: 12px;
+  }
+  .albumRowAll {
+    margin-bottom: 10px;
+  }
+  #albums-title {
+    font-size: 14px;
+  }
+  .genres {
+    top: 570px;
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+  }
+  #genres-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .genreRowAll {
+    font-size: 14px;
+    margin-top: 11px;
+    min-width: 40px;
+    max-width: 200px;
+    border-radius: 8px;
+    padding: 8px;
+  }
+  .input-field {
+    top: 390px;
+    width: 160px;
+    padding: 10px 15px;
+    margin: 8px 15px 0 0;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .followers {
+    top: 300px;
+  }
+  #name-text {
+    top: 220px;
+    font-size: 25px;
+  }
+  #error-message {
+    top: 500px;
+  }
+  .button-57 {
+    font-size: 13px;
+    padding: 14px 14px 13px;
+    border-radius: 8px;
+    top: 455px;
+  }
+  .button-57 span:first-child {
+    font-size: 13px;
+  }
+  .button-57 span:last-child {
+    font-size: 11px;
+    line-height: 12px;
+  }
+  .button-57:after {
+    bottom: -30%;
+  }
+  .button-57:hover span:last-child {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .missing-albums-error {
+    top: 365px;
+    right: 130px;
+    font-size: 20px;
+  }
+  .missing-tracks-error {
+    top: 365px;
+    left: 130px;
+    font-size: 20px;
+  }
+  .missing-genres-error {
+    font-size: 15px;
+    top: 640px;
+  }
+  .photo-missing {
+    top: 100px;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .photo {
+    height: 200px;
+    width: 200px;
+  }
+  .top-tracks {
+    left: 30px;
+    border-radius: 10px;
+    min-height: 400px;
+    width: 250px;
+  }
+  .trackRowAll img {
+    width: 60px; 
+    height: 60px; 
+    margin-left: 10px; 
+  }
+  .trackRowAll p {
+    margin-left: 15px; 
+    color: #fff;
+    font-size: 9px;
+  }
+  .trackRowAll {
+    margin-bottom: 10px; 
+  }
+  #tracks-title {
+    font-size: 14px; 
+  }
+  .albums {
+    right: 30px;
+    border-radius: 10px;
+    min-height: 400px;
+    width: 250px;
+  }
+  .albumRowAll img {
+    width: 60px;
+    height: 60px;
+    margin-left: 10px;
+  }
+  .albumRowAll p {
+    margin-left: 15px;
+    color: #fff;
+    font-size: 9px;
+  }
+  .albumRowAll {
+    margin-bottom: 10px;
+  }
+  #albums-title {
+    font-size: 14px;
+  }
+  .genres {
+    border-radius: 10px;
+    height: 200px;
+    width: 200px;
+  }
+  #genres-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .genreRowAll {
+    font-size: 14px;
+    margin-top: 11px;
+    min-width: 40px;
+    max-width: 200px;
+    border-radius: 8px;
+    padding: 8px;
+  }
+  .input-field {
+    width: 160px;
+    padding: 10px 15px;
+    margin: 8px 15px 0 0;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .followers {
+    top: 300px;
+  }
+  #name-text {
+    top: 220px;
+  }
+  .button-57 {
+    font-size: 13px;
+    padding: 14px 14px 13px;
+    border-radius: 8px;
+  }
+
+  .button-57 span:first-child {
+    font-size: 13px;
+  }
+
+  .button-57 span:last-child {
+    font-size: 11px;
+    line-height: 12px;
+  }
+
+  .button-57:after {
+    bottom: -30%;
+  }
+
+  .button-57:hover span:last-child {
+    transform: translateX(-50%) translateY(-50%);
+  }
+  .missing-albums-error {
+    top: 365px;
+    right: 45px;
+    font-size: 15px;
+  }
+  .missing-tracks-error {
+    top: 365px;
+    left: 50px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 830px) {
+  .top-tracks {
+    width: 180px;
+  }
+  .albums {
+    width: 180px;
+  }
+  .missing-albums-error {
+    top: 365px;
+    right: 43px;
+    font-size: 10px;
+  }
+  .missing-tracks-error {
+    top: 365px;
+    left: 45px;
+    font-size: 10px;
+  }
+}
+
+/* mobile screen support */
+@media (max-width: 700px) {
+  .photo {
+    top: 30px;
+    height: 120px;
+    width: 120px;
+  }
+  .followers {
+    top: 600px;
+    width: 80px;
+    height: 60px;
+  }
+  .followers p {
+    margin: 5px;
+    font-size: 12px;
+  }
+  #followers-text {
+    background-color: #18283a;
+    border-radius: 10px;
+    padding: 0 7px 0 7px;
+    height: 15px;
+  }
+  #name-text {
+    top: 140px;
+    font-size: 20px;
+  }
+  .top-tracks {
+    left: 10px;
+    border-radius: 10px;
+    min-height: 200px;
+    width: 200px;
+  }
+  .trackRowAll img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+  }
+  .trackRowAll p {
+    margin-left: 10px;
+    font-size: 9px;
+  }
+  .trackRowAll {
+    margin-bottom: 5px;
+  }
+  #tracks-title {
+    font-size: 14px;
+  }
+  .albums {
+    right: 10px;
+    border-radius: 10px;
+    min-height: 200px;
+    width: 200px;
+  }
+  .albumRowAll img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+  }
+  .albumRowAll p {
+    margin-left: 10px;
+    font-size: 9px;
+  }
+  .albumRowAll {
+    margin-bottom: 10px;
+  }
+  #albums-title {
+    font-size: 14px;
+  }
+  .input-field {
+    top: 480px;
+    width: 160px;
+    padding: 10px 15px;
+    margin: 8px 15px 0 0;
+    height: 50px;
+    font-size: 16px;
+    border-radius: 8px;
+  }
+  .button-57 {
+    font-size: 13px;
+    padding: 14px 14px 13px;
+    border-radius: 8px;
+    top: 545px;
+  }
+  .genres {
+    top: 670px;
+    border-radius: 10px;
+    height: 170px;
+    width: 170px;
+  }
+  #genres-title {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+  .genreRowAll {
+    font-size: 10px;
+    margin-top: 11px;
+    min-width: 20px;
+    max-width: 100px;
+    border-radius: 8px;
+    padding: 8px;
+  }
+  #website-logo {
+    height: 150px;
+    width: 150px;
+  }
+  #start-text {
+    top: 250px;
+    font-size: 20px;
+  }
+  #error-message {
+    top: 450px;
+  }
+  .missing-albums-error {
+    top: 280px;
+    right: 30px;
+    font-size: 10px;
+  }
+  .missing-tracks-error {
+    top: 280px;
+    left: 35px;
+    font-size: 10px;
+  }
+  .missing-genres-error {
+    font-size: 10px;
+    top: 730px;
+  }
+  .photo-missing {
+    top: 60px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 450px) {
+  .top-tracks {
+    left: 30px;
+    width: 170px;
+  }
+  .albums {
+    right: 30px;
+    width: 170px;
+  }
+  .followers {
+    top: 580px;
+  }
+  .genres {
+    border-radius: 10px;
+    height: 170px;
+    width: 170px;
+  }
+}
+
+@media (max-width: 430px) {
+  .followers {
+    top: 600px;
+  }
+  .missing-albums-error {
+    top: 280px;
+    right: 38px;
+    font-size: 10px;
+  }
+  .missing-tracks-error {
+    top: 280px;
+    left: 40px;
+    font-size: 10px;
+  }
 }
