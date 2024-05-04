@@ -70,6 +70,8 @@ function display_content() {
                                 .then(response => response.json())
                                 .then(data => {
                                     const topTracks = data.tracks.sort((a, b) => b.popularity - a.popularity).slice(0, 5);
+                                    let isEmpty_tracks = true;
+
                                     for (let i = 1; i <= 5; i++) {
                                         const trackText = document.getElementById(`track${i}-text`);
                                         const trackPhoto = document.getElementById(`track${i}-photo`);
@@ -77,15 +79,25 @@ function display_content() {
                                         const track = topTracks[i - 1];
 
                                         if (track) {
-                                            trackText.innerHTML = track.name;
+                                            let truncatedName_track = track.name;
+                                            if (track.name.length > 50) {
+                                                truncatedName_track = track.name.substring(0, 50) + "...";
+                                            }
+                                            trackText.innerHTML = truncatedName_track;
                                             trackPhoto.src = track.album.images[0].url;
                                             trackLink.href = `https://open.spotify.com/track/${track.id}`;
                                             [trackText, trackPhoto, trackLink].forEach(el => el.classList.remove("hide"));
+
+                                            isEmpty_tracks = false;
+                                            document.querySelector(".missing-tracks-error").classList.add("hide");
                                         } else {
                                             trackText.innerHTML = "";
                                             trackPhoto.src = "";
                                             [trackText, trackPhoto, trackLink].forEach(el => el.classList.add("hide"));
                                         }
+                                    }
+                                    if (isEmpty_tracks) {
+                                        document.querySelector(".missing-tracks-error").classList.remove("hide");
                                     }
                                     document.querySelector(".top-tracks").classList.remove("hide");
                                 });
@@ -104,7 +116,11 @@ function display_content() {
                                         const album = topAlbums[i - 1];
                     
                                         if (album) {
-                                            albumText.innerHTML = album.name;
+                                            let truncatedName = album.name;
+                                            if (album.name.length > 50) {
+                                                truncatedName = album.name.substring(0, 50) + "...";
+                                            }
+                                            albumText.innerHTML = truncatedName;
                                             albumPhoto.src = album.images[0].url;
                                             albumLink.href = `https://open.spotify.com/album/${album.id}`;
                                             [albumText, albumPhoto, albumLink].forEach(el => el.classList.remove("hide"));
@@ -130,3 +146,16 @@ function display_content() {
                 });
             });
 }
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+    
+      // Find the button element you want to trigger
+      var button = document.getElementById('search-button');
+    
+      if (button) {
+        button.click();
+      }
+    }
+  });
