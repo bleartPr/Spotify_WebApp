@@ -80,8 +80,8 @@ function display_content() {
 
                                         if (track) {
                                             let truncatedName_track = track.name;
-                                            if (track.name.length > 50) {
-                                                truncatedName_track = track.name.substring(0, 50) + "...";
+                                            if (track.name.length > 45) {
+                                                truncatedName_track = track.name.substring(0, 45) + "...";
                                             }
                                             trackText.innerHTML = truncatedName_track;
                                             trackPhoto.src = track.album.images[0].url;
@@ -117,8 +117,8 @@ function display_content() {
                     
                                         if (album) {
                                             let truncatedName = album.name;
-                                            if (album.name.length > 50) {
-                                                truncatedName = album.name.substring(0, 50) + "...";
+                                            if (album.name.length > 45) {
+                                                truncatedName = album.name.substring(0, 45) + "...";
                                             }
                                             albumText.innerHTML = truncatedName;
                                             albumPhoto.src = album.images[0].url;
@@ -149,13 +149,20 @@ function display_content() {
 
 document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter') {
-      event.preventDefault();
+      event.preventDefault(); // Prevent the default action of the "Enter" key
     
       // Find the button element you want to trigger
       var button = document.getElementById('search-button');
     
       if (button) {
-        button.click();
+        button.click(); // Trigger the click event on the button
       }
     }
-  });
+});
+
+
+
+function trashButton() {
+    const input_b = document.getElementById("input-button");
+    input_b.value = '';
+}
