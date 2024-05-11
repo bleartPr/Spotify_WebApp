@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="spoble_track.css">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Oswald:wght@200..700&family=Russo+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Spoble Tracks</title>
+</head>
+<body>
+
+    <div class="header">
+        <a id="photo-clickable" href="">
+            <img id="photo" src="website_logo.jfif" alt="">
+        </a>
+        <h1 id="track-name">WELCOME, SEARCH A SPOTIFY SONG!</h1>
+
+        <div class="track-explicit-container hide">
+            <h1 id="track-explicit"></h1>
+        </div>
+
+        <a href="index.html">
+            <button id="switch-spoble-artist-website">Search Artists</button>
+        </a>
+
+        <h2 id="beta-text">BETA</h2>
+
+    </div>
+
+    <div class="middle">
+        <div class="popularity-container hide">
+            <h1 id="track-popularity-title">POPULARITY</h1>
+            <h1 id="track-popularity-number"></h1>
+            <div class="popularity-scale">
+                <div class="popularity-bar" id="popularity-bar"></div>
+            </div>
+        </div>
+
+        <div class="duration-container hide">
+            <h1 id="track-duration-title">duration</h1>
+            <h2 id="track-duration"></h2>
+        </div>
+
+        <div class="album-and-release-date hide">
+            <h1 id="track-album-title"></h1>
+            <div class="album-date-container">
+                <h2 id="track-album"></h2>
+                <h4 id="track-release-date"></h4>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+
+        <div class="input-field-row">
+            <input id="input-field" placeholder="TRACK NAME" type="text">
+            <button id="trash-button" onclick="trashButton()"><i class="fa-solid fa-trash fa-2x" style="color: #ffffff;"></i></button>
+        </div>
+        <button id="search-button" class="button-5" role="button" onclick="display_track_display()">Search</button>
+
+        <audio class="hide" controls>
+            <source src="" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <div class="track-artist-container hide">
+            <h1 id="track-artist-title"></h1>
+            <h2 id="track-artist"></h2>
+        </div>
+          
+    </div>
+
+    <script src="spoble_tracks.js"></script>
+</body>
+</html>
