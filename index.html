@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,13 +15,15 @@
 </head>
 <body>
     <div class="prompt-body">
-        <input id="input-button" placeholder="ARTIST NAME" class="input-field" type="text">
-        <button id="search-button" onclick="display_content()" class="button-57" role="button"><span class="text">Submit</span><span>Search</span></button>
-        <button id="trash-button" onclick="trashButton()"><i class="fa-solid fa-trash fa-2x" style="color: #ffffff;"></i></button>
+        <div class="input-trash">
+            <input id="input-button" placeholder="ARTIST NAME" class="input-field" type="text">
+            <button id="trash-button" onclick="trashButton()"><i class="fa-solid fa-trash fa-2x" style="color: #ffffff;"></i></button>
+        </div>
+        <button id="search-button" class="button-5" role="button" onclick="display_content()">Search</button>
     </div>
 
     <a href="spoble_track.html">
-    <button id="switch-spoble-track-website">Search Songs</button>
+        <button id="switch-spoble-track-website">Search Songs</button>
     </a>
 
     <h2 id="beta-text">BETA</h2>
@@ -130,6 +132,6 @@
     <p class="missing-tracks-error hide">This Artist Has No Songs</p>
     <p class="missing-genres-error hide">NO GENRES</p>
 
-    <script src="script.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>
